@@ -2,11 +2,11 @@
 import PackageDescription
 
 let package = Package(
-    name: "CapacitorLocalAuth",
+    name: "RevlabsCapacitorLocalAuth",
     platforms: [.iOS(.v14)],
     products: [
         .library(
-            name: "CapacitorLocalAuth",
+            name: "RevlabsCapacitorLocalAuth",
             targets: ["LocalAuthPlugin"])
     ],
     dependencies: [
