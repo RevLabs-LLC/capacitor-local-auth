@@ -45,13 +45,11 @@ public class LocalAuth {
         // Check for device credential authentication availability (PIN, pattern, password)
         int canAuthenticateDeviceCredential = biometricManager.canAuthenticate(BiometricManager.Authenticators.DEVICE_CREDENTIAL);
         
-        // Biometrics are available if the result is SUCCESS or if biometrics are available but not enrolled
-        boolean biometricsAvailable = canAuthenticateBiometrics == BiometricManager.BIOMETRIC_SUCCESS || 
-                                      canAuthenticateBiometrics == BiometricManager.BIOMETRIC_ERROR_NONE_ENROLLED;
+        // Biometrics are available if the result is SUCCESS
+        boolean biometricsAvailable = canAuthenticateBiometrics == BiometricManager.BIOMETRIC_SUCCESS;
         
-        // Device credentials are available if the result is SUCCESS or if credentials are available but not set up
-        boolean deviceCredentialsAvailable = canAuthenticateDeviceCredential == BiometricManager.BIOMETRIC_SUCCESS || 
-                                           canAuthenticateDeviceCredential == BiometricManager.BIOMETRIC_ERROR_NONE_ENROLLED;
+        // Device credentials are available if the result is SUCCESS
+        boolean deviceCredentialsAvailable = canAuthenticateDeviceCredential == BiometricManager.BIOMETRIC_SUCCESS;
         
         // Create and return the result map
         Map<String, Boolean> result = new HashMap<>();
